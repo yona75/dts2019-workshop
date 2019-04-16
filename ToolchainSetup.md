@@ -8,7 +8,7 @@ sudo yum install flex gperf
 ```
 Ubuntu
 ```bash
-sudo yum install flex gperf
+sudo apt-get install flex gperf
 ```
 
 Then install Python packages
