@@ -5,8 +5,19 @@
 ```bash
 git clone https://github.com/yona75/dts2019-workshop
 ```
+2. Navigate to ~/environment/esp/dts2019-workshop/tools/aws_config_quick_start/ and open file configure.json
+Edit you Thing name, WiFi credentials, and WiFi security mode which should be eWiFiSecurityWPA2
 
-2. Navigate to https://yona75.github.io/credformatter/, upload Certificate and Private key provided to you and generate aws_clientcredential_keys.h file
+![Edit configure.json](images/dts-configure-json.png)
+
+3. In the Terminal window navigate to *~/environment/esp/dts2019-workshop/tools/aws_config_quick_start* and execute *python SetupAWS.py setup* command:
+
+```bash
+cd ~/environment/esp/dts2019-workshop/tools/aws_config_quick_start 
+python SetupAWS.py setup
+```
+
+If successful command will not produce any output, but you can verify in AWS IoT Core Console that new Thing, certificate and policy were created.
 
 3. Copy the file to ~/cdd-workshop/demos/common/include directory by dragging it there
 
