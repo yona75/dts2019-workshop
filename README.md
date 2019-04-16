@@ -14,6 +14,7 @@ In order to compile the code in the Cloud9 environment please execute following 
 
 Shadow structure is following:
 
+```json
 {
 	"sensors": {
 		"temperature": 34.1,
@@ -56,3 +57,4 @@ Shadow structure is following:
     ]
 	}
 }
+```
