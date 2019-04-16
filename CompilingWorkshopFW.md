@@ -45,7 +45,7 @@ make
 
 ![download bin files from Cloud9](images/cdd-download.png)
 
-11. Flash the firmware and observe console output as described in [Uploading compiled firmware to ESP32 development board](../FlashingFW.md)
+11. Flash the firmware and observe console output as described in [Uploading compiled firmware to ESP32 development board](./FlashingFW.md)
 
 12. In the Terminal window navigate back to *~/environment/esp/dts2019-workshop* and execute *git checkut shadow-demo* command:
 
