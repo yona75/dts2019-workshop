@@ -55,6 +55,6 @@ Shadow structure is following:
     		"blue": 15
     	}
     ]
-	}
+    }
 }
 ```
