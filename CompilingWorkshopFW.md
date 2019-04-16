@@ -1,4 +1,4 @@
-## Steps to compile Domain Tech Summit Workshop firmware for ESP32
+## Steps to compile Domain Tech Summit 2019 Workshop firmware for ESP32
 
 1. Clone the repo:
 
