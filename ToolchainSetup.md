@@ -6,11 +6,12 @@ Amazon Linux
 ```bash
 sudo yum install flex gperf
 ```
-Ununtu
+Ubuntu
 ```bash
 sudo yum install flex gperf
 ```
 
+Then install Python packages
 ```bash
 sudo pip install argparse cryptography pyserial boto3
 ```
