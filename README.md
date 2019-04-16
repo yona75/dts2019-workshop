@@ -16,11 +16,11 @@ Shadow structure is following:
 
 ```json
 {
-	"sensors": {
-		"temperature": 34.1,
-		"pressure": 928.0,
-		"humidity": 43.4,
-		"illuminance": 530.1        
+    "sensors": {
+        "temperature": 34.1,
+	"pressure": 928.0,
+	"humidity": 43.4,
+	"illuminance": 530.1        
 	},
     "buttons": {
     	"button1": 0,
