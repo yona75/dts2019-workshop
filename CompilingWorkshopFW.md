@@ -5,8 +5,8 @@
 ```bash
 git clone https://github.com/yona75/dts2019-workshop
 ```
-2. Navigate to ~/environment/esp/dts2019-workshop/tools/aws_config_quick_start/ and open file configure.json
-Edit you Thing name, WiFi credentials, and WiFi security mode which should be eWiFiSecurityWPA2
+2. Navigate to *~/environment/esp/dts2019-workshop/tools/aws_config_quick_start/ and open file configure.json*
+Edit you *Thing name, WiFi credentials, and WiFi security* mode which should be *eWiFiSecurityWPA2*
 
 ![Edit configure.json](images/dts-configure-json.png)
 
@@ -19,7 +19,7 @@ cd ~/environment/esp/dts2019-workshop/tools/aws_config_quick_start
 python SetupAWS.py setup
 ```
 
-If successful command will not produce any output, but you can verify in AWS IoT Core Console that new Thing, certificate and policy were created.
+If successful command will not produce any output, but you can verify in AWS IoT Core Console that new Thing, Certificate and Policy were created.
 
 5. In the Terminal window navigate to *~/environment/esp/dts2019-workshop/demos/espressif/esp32_devkitc_esp_wrover_kit/make* and execute *make menuconfig* command:
 
@@ -45,7 +45,7 @@ make
 
 ![download bin files from Cloud9](images/cdd-download.png)
 
-11. Flash the firmware and observe console output as described in %%% section
+11. Flash the firmware and observe console output as described in [Uploading compiled firmware to ESP32 development board](../FlashingFW.md)
 
 12. In the Terminal window navigate back to *~/environment/esp/dts2019-workshop* and execute *git checkut shadow-demo* command:
 
@@ -63,7 +63,7 @@ cd ~/environment/esp/dts2019-workshop/demos/espressif/esp32_devkitc_esp_wrover_k
 make
 ```
 
-14. Once compilation is done, delete old aws_demos.bin, partitions_example.bin, and bootloader.bin from YOUR LAPTOP!!! and download **again** these 3 files to your local computer (If you will not delete or move old files on Mac they will be downloaded as aws_demos (1).bin, etc.):
+14. Once compilation is done, delete old *aws_demos.bin, partitions_example.bin, and bootloader.bin* from **YOUR LAPTOP!!!** and download **again** these 3 files to your local computer (If you will not delete or move old files on Mac they will be downloaded as aws_demos (1).bin, etc.):
 
 - *build/aws_demos.bin*
 - *build/partitions_example.bin*
