@@ -12,7 +12,7 @@ Edit you *Thing name, WiFi credentials, and WiFi security* mode which should be 
 
 3. Save the file
 
-4. In the Terminal window navigate to *~/environment/esp/dts2019-workshop/tools/aws_config_quick_start* and execute *python SetupAWS.py setup* command:
+4. In the Terminal window navigate to *~/environment/esp/dts2019-workshop/tools/aws_config_quick_start* and execute *python SetupAWS.py setup* command to provision your *Thing, Certificate, and Policy*:
 
 ```bash
 cd ~/environment/esp/dts2019-workshop/tools/aws_config_quick_start 
