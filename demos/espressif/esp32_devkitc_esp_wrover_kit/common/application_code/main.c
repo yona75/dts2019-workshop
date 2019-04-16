@@ -60,8 +60,8 @@ const AppVersion32_t xAppFirmwareVersion = {
 };
 
 /* Static arrays for FreeRTOS+TCP stack initialization for Ethernet network connections
- * are use are below. If you are using an Ethernet connection on your MCU device it is 
- * recommended to use the FreeRTOS+TCP stack. The default values are defined in 
+ * are use are below. If you are using an Ethernet connection on your MCU device it is
+ * recommended to use the FreeRTOS+TCP stack. The default values are defined in
  * FreeRTOSConfig.h. */
 
 /* Default MAC address configuration.  The demo creates a virtual network
@@ -127,6 +127,8 @@ static void prvWifiConnect( void );
  * @brief Initializes the board.
  */
 static void prvMiscInitialization( void );
+
+void vStartSensorsDemo( void );
 /*-----------------------------------------------------------*/
 
 /**
@@ -137,10 +139,10 @@ int app_main( void )
     /* Perform any hardware initialization that does not require the RTOS to be
      * running.  */
     prvMiscInitialization();
-    	/* Create tasks that are not dependent on the WiFi being initialized. */
+        /* Create tasks that are not dependent on the WiFi being initialized. */
     xLoggingTaskInitialize( mainLOGGING_TASK_STACK_SIZE,
-							tskIDLE_PRIORITY + 5,
-							mainLOGGING_MESSAGE_QUEUE_LENGTH );
+                            tskIDLE_PRIORITY + 5,
+                            mainLOGGING_MESSAGE_QUEUE_LENGTH );
     FreeRTOS_IPInit( ucIPAddress,
             ucNetMask,
             ucGatewayAddress,
@@ -158,7 +160,8 @@ int app_main( void )
         vDevModeKeyProvisioning();
 
         /* Run all demos. */
-        DEMO_RUNNER_RunDemos();
+        //DEMO_RUNNER_RunDemos();
+    vStartSensorsDemo();
     }
 
     /* Start the scheduler.  Initialization that requires the OS to be running,
@@ -174,13 +177,13 @@ int app_main( void )
 
 static void prvMiscInitialization( void )
 {
-	// Initialize NVS
-	esp_err_t ret = nvs_flash_init();
-	if (ret == ESP_ERR_NVS_NO_FREE_PAGES) {
-		ESP_ERROR_CHECK(nvs_flash_erase());
-		ret = nvs_flash_init();
-	}
-	ESP_ERROR_CHECK( ret );
+    // Initialize NVS
+    esp_err_t ret = nvs_flash_init();
+    if (ret == ESP_ERR_NVS_NO_FREE_PAGES) {
+        ESP_ERROR_CHECK(nvs_flash_erase());
+        ret = nvs_flash_init();
+    }
+    ESP_ERROR_CHECK( ret );
 }
 /*-----------------------------------------------------------*/
 
@@ -225,7 +228,7 @@ void prvWifiConnect( void )
     else
     {
         configPRINTF( ( "WiFi failed to connect to AP.\r\n" ) );
-
+        esp_restart();
         portDISABLE_INTERRUPTS();
         while( 1 )
         {
@@ -291,7 +294,7 @@ void vApplicationGetTimerTaskMemory( StaticTask_t ** ppxTimerTaskTCBBuffer,
 
 const char * pcApplicationHostnameHook( void )
 {
-    /* This function will be called during the DHCP: the machine will be registered 
+    /* This function will be called during the DHCP: the machine will be registered
      * with an IP address plus this name. */
     return clientcredentialIOT_THING_NAME;
 }
