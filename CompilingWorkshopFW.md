@@ -74,5 +74,36 @@ make
 16. In AWS Console navigate to AWS IoT Core -> Manage -> <YOUR THING> -> Shadow
   Observe the sensors output
   
-17. Edit the *desired* section of the demo to set LED colors
+17. Edit the *desired* section of the demo to set LED colors (Insert this BEFORE *reported* section)
+```json
+  "desired": {
+    "leds": [
+      {
+        "red": 16,
+        "green": 0,
+        "blue": 0
+      },
+      {
+        "red": 0,
+        "green": 15,
+        "blue": 0
+      },
+      {
+        "red": 0,
+        "green": 0,
+        "blue": 15
+      },
+      {
+        "red": 15,
+        "green": 15,
+        "blue": 0
+      },
+      {
+        "red": 0,
+        "green": 15,
+        "blue": 15
+      }
+    ]
+  },
+  ```
 
