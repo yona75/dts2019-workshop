@@ -69,7 +69,7 @@ make
 - *build/partitions_example.bin*
 - *build/bootloader/bootloader.bin*
 
-15. Flash the firmware and observe console output as described in %%% section
+15. Flash the firmware and observe console output as described in [Uploading compiled firmware to ESP32 development board](./FlashingFW.md) section
 
 16. In AWS Console navigate to AWS IoT Core -> Manage -> <YOUR THING> -> Shadow
   Observe the sensors output
