@@ -3,7 +3,7 @@
 1. Clone the repo:
 
 ```bash
-git clone https://github.com/yona75/cdd-workshop
+git clone https://github.com/yona75/dts2019-workshop
 ```
 
 2. Navigate to https://yona75.github.io/credformatter/, upload Certificate and Private key provided to you and generate aws_clientcredential_keys.h file
