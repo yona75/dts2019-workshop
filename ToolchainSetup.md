@@ -2,11 +2,17 @@
 
 1. In the Cloud9 Terminal window install prerequisites
 
+Amazon Linux
 ```bash
 sudo yum install flex gperf
 ```
+Ununtu
 ```bash
-sudo pip install argparse cryptography serial
+sudo yum install flex gperf
+```
+
+```bash
+sudo pip install argparse cryptography pyserial boto3
 ```
 
 2. Download 64-bit version of Xtensa ESP32 toolchain:
