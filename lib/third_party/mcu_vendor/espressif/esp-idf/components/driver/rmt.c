@@ -18,6 +18,7 @@
 #include "freertos/semphr.h"
 #include "freertos/xtensa_api.h"
 #include "freertos/ringbuf.h"
+#include "freertos/task.h"
 #include "esp_intr.h"
 #include "esp_log.h"
 #include "esp_err.h"
@@ -492,9 +493,16 @@ esp_err_t rmt_config(const rmt_config_t* rmt_param)
 
 static void IRAM_ATTR rmt_fill_memory(rmt_channel_t channel, const rmt_item32_t* item, uint16_t item_num, uint16_t mem_offset)
 {
+    if (xPortInIsrContext()){
+        UBaseType_t res = taskENTER_CRITICAL_FROM_ISR(); 
+        RMT.apb_conf.fifo_mask = RMT_DATA_MODE_MEM;
+        taskEXIT_CRITICAL_FROM_ISR(res);
+    }
+    else {
     portENTER_CRITICAL(&rmt_spinlock);
     RMT.apb_conf.fifo_mask = RMT_DATA_MODE_MEM;
     portEXIT_CRITICAL(&rmt_spinlock);
+    }
     int i;
     for(i = 0; i < item_num; i++) {
         RMTMEM.chan[channel].data32[i + mem_offset].val = item[i].val;
